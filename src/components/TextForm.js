@@ -42,7 +42,12 @@ export default function TextForm(props) {
         for (let i = 0; i < newTextArr.length; i++) {
             newTextArr[i] = newTextArr[i].charAt(0).toUpperCase() + newTextArr[i].slice(1);
         }
-        setText(newTextArr.join(" "));
+        let newTextArrData = newTextArr.join(" ");
+        newTextArrData = newTextArrData.split("\n");
+        for (let i = 0; i < newTextArrData.length; i++) {
+            newTextArrData[i] = newTextArrData[i].charAt(0).toUpperCase() + newTextArrData[i].slice(1);
+        }
+        setText(newTextArrData.join("\n"));
         props.showAlert("Converted to Capitalized Case", "success");
         setButtonDisabled(false);
         setButtonDisableds(false);
@@ -55,7 +60,13 @@ export default function TextForm(props) {
         for (let i = 0; i < newTextArr.length; i++) {
             newTextArr[i] = newTextArr[i].charAt(0).toUpperCase() + newTextArr[i].slice(1);
         }
-        setText(newTextArr.join(". "));
+        
+        let newTextArrData = newTextArr.join(". ");
+        newTextArrData = newTextArrData.split("\n");
+        for (let i = 0; i < newTextArrData.length; i++) {
+            newTextArrData[i] = newTextArrData[i].charAt(0).toUpperCase() + newTextArrData[i].slice(1);
+        }
+        setText(newTextArrData.join("\n"));
         props.showAlert("Converted to Sentence Case", "success");
         setButtonDisabled(false);
         setButtonDisableds(false);
